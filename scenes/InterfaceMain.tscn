@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://resources/ThemeInterface.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/InterfaceMain.gd" type="Script" id=2]
+
+[node name="InterfaceMain" type="VFlowContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+
+[node name="Qty_Paper" type="SpinBox" parent="."]
+margin_right = 400.0
+margin_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 400, 0 )
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+align = 2
+prefix = "Paper:"
+
+[node name="Qty_Ink" type="SpinBox" parent="."]
+margin_top = 39.0
+margin_right = 400.0
+margin_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 400, 0 )
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+align = 2
+prefix = "Ink:"
+
+[node name="Data" type="Label" parent="."]
+margin_top = 78.0
+margin_right = 400.0
+margin_bottom = 159.0
+theme = ExtResource( 1 )
+text = "DATA: 
+ZFW: 
+FOB: "
