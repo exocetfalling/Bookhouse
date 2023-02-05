@@ -31,10 +31,17 @@ margin_bottom = 83.0
 theme = ExtResource( 1 )
 text = "Ink: "
 
-[node name="Options_Paper" type="HFlowContainer" parent="."]
+[node name="Current_Books" type="Label" parent="."]
 margin_top = 87.0
 margin_right = 400.0
-margin_bottom = 157.0
+margin_bottom = 112.0
+theme = ExtResource( 1 )
+text = "Books: "
+
+[node name="Options_Paper" type="HFlowContainer" parent="."]
+margin_top = 116.0
+margin_right = 400.0
+margin_bottom = 186.0
 
 [node name="Qty_Paper" type="SpinBox" parent="Options_Paper"]
 margin_right = 400.0
@@ -55,9 +62,9 @@ size_flags_horizontal = 3
 text = "Buy"
 
 [node name="Options_Ink" type="HFlowContainer" parent="."]
-margin_top = 161.0
+margin_top = 190.0
 margin_right = 400.0
-margin_bottom = 231.0
+margin_bottom = 260.0
 
 [node name="Qty_Ink" type="SpinBox" parent="Options_Ink"]
 margin_right = 400.0
@@ -77,9 +84,42 @@ margin_bottom = 70.0
 size_flags_horizontal = 3
 text = "Buy"
 
+[node name="Options_Books" type="HFlowContainer" parent="."]
+margin_top = 264.0
+margin_right = 400.0
+margin_bottom = 334.0
+
+[node name="Qty_Books" type="SpinBox" parent="Options_Books"]
+margin_right = 400.0
+margin_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 400, 0 )
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+align = 2
+prefix = "Books:"
+
+[node name="Make_Books" type="Button" parent="Options_Books"]
+margin_top = 39.0
+margin_right = 198.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+text = "Make"
+
+[node name="Sell_Books" type="Button" parent="Options_Books"]
+margin_left = 202.0
+margin_top = 39.0
+margin_right = 400.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+text = "Sell"
+
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
 [connection signal="button_down" from="Options_Paper/Buy_Paper" to="." method="_on_Buy_Paper_button_down"]
 [connection signal="button_down" from="Options_Ink/Buy_Ink" to="." method="_on_Buy_Ink_button_down"]
+[connection signal="button_down" from="Options_Books/Make_Books" to="." method="_on_Make_Books_button_down"]
+[connection signal="button_down" from="Options_Books/Sell_Books" to="." method="_on_Sell_Books_button_down"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
