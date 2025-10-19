@@ -1,125 +1,92 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://dfvwsmiiwa8cr"]
 
-[ext_resource path="res://resources/ThemeInterface.tres" type="Theme" id=1]
-[ext_resource path="res://scripts/InterfaceMain.gd" type="Script" id=2]
+[ext_resource type="Theme" path="res://resources/ThemeInterface.tres" id="1"]
+[ext_resource type="Script" uid="uid://clv1b3tr7lqng" path="res://scripts/InterfaceMain.gd" id="2"]
 
 [node name="InterfaceMain" type="VFlowContainer"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 1 )
-script = ExtResource( 2 )
+theme = ExtResource("1")
+script = ExtResource("2")
 
-[node name="Current_Funds" type="Label" parent="."]
-margin_right = 400.0
-margin_bottom = 25.0
-theme = ExtResource( 1 )
+[node name="CurrentFunds" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1")
 text = "Funds: "
 
-[node name="Current_Paper" type="Label" parent="."]
-margin_top = 29.0
-margin_right = 400.0
-margin_bottom = 54.0
-theme = ExtResource( 1 )
+[node name="CurrentPaper" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1")
 text = "Paper: "
 
-[node name="Current_Ink" type="Label" parent="."]
-margin_top = 58.0
-margin_right = 400.0
-margin_bottom = 83.0
-theme = ExtResource( 1 )
+[node name="CurrentInk" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1")
 text = "Ink: "
 
-[node name="Current_Books" type="Label" parent="."]
-margin_top = 87.0
-margin_right = 400.0
-margin_bottom = 112.0
-theme = ExtResource( 1 )
+[node name="CurrentBooks" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1")
 text = "Books: "
 
-[node name="Options_Paper" type="HFlowContainer" parent="."]
-margin_top = 116.0
-margin_right = 400.0
-margin_bottom = 186.0
+[node name="OptionsPaper" type="HFlowContainer" parent="."]
+layout_mode = 2
 
-[node name="Qty_Paper" type="SpinBox" parent="Options_Paper"]
-margin_right = 400.0
-margin_bottom = 35.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_min_size = Vector2( 400, 0 )
+[node name="QtyPaper" type="SpinBox" parent="OptionsPaper"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource( 1 )
-align = 2
+theme = ExtResource("1")
 prefix = "Paper:"
 
-[node name="Buy_Paper" type="Button" parent="Options_Paper"]
-margin_top = 39.0
-margin_right = 400.0
-margin_bottom = 70.0
+[node name="BuyPaper" type="Button" parent="OptionsPaper"]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Buy"
 
-[node name="Options_Ink" type="HFlowContainer" parent="."]
-margin_top = 190.0
-margin_right = 400.0
-margin_bottom = 260.0
+[node name="OptionsInk" type="HFlowContainer" parent="."]
+layout_mode = 2
 
-[node name="Qty_Ink" type="SpinBox" parent="Options_Ink"]
-margin_right = 400.0
-margin_bottom = 35.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_min_size = Vector2( 400, 0 )
+[node name="QtyInk" type="SpinBox" parent="OptionsInk"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource( 1 )
-align = 2
+theme = ExtResource("1")
 prefix = "Ink:"
 
-[node name="Buy_Ink" type="Button" parent="Options_Ink"]
-margin_top = 39.0
-margin_right = 400.0
-margin_bottom = 70.0
+[node name="BuyInk" type="Button" parent="OptionsInk"]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Buy"
 
-[node name="Options_Books" type="HFlowContainer" parent="."]
-margin_top = 264.0
-margin_right = 400.0
-margin_bottom = 334.0
+[node name="OptionsBooks" type="HFlowContainer" parent="."]
+layout_mode = 2
 
-[node name="Qty_Books" type="SpinBox" parent="Options_Books"]
-margin_right = 400.0
-margin_bottom = 35.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_min_size = Vector2( 400, 0 )
+[node name="QtyBooks" type="SpinBox" parent="OptionsBooks"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource( 1 )
-align = 2
+theme = ExtResource("1")
 prefix = "Books:"
 
-[node name="Make_Books" type="Button" parent="Options_Books"]
-margin_top = 39.0
-margin_right = 198.0
-margin_bottom = 70.0
+[node name="MakeBooks" type="Button" parent="OptionsBooks"]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Make"
 
-[node name="Sell_Books" type="Button" parent="Options_Books"]
-margin_left = 202.0
-margin_top = 39.0
-margin_right = 400.0
-margin_bottom = 70.0
+[node name="SellBooks" type="Button" parent="OptionsBooks"]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Sell"
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[connection signal="button_down" from="Options_Paper/Buy_Paper" to="." method="_on_Buy_Paper_button_down"]
-[connection signal="button_down" from="Options_Ink/Buy_Ink" to="." method="_on_Buy_Ink_button_down"]
-[connection signal="button_down" from="Options_Books/Make_Books" to="." method="_on_Make_Books_button_down"]
-[connection signal="button_down" from="Options_Books/Sell_Books" to="." method="_on_Sell_Books_button_down"]
+[connection signal="button_down" from="OptionsPaper/BuyPaper" to="." method="_on_Buy_Paper_button_down"]
+[connection signal="button_down" from="OptionsInk/BuyInk" to="." method="_on_Buy_Ink_button_down"]
+[connection signal="button_down" from="OptionsBooks/MakeBooks" to="." method="_on_Make_Books_button_down"]
+[connection signal="button_down" from="OptionsBooks/SellBooks" to="." method="_on_Sell_Books_button_down"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

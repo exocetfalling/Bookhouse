@@ -18,6 +18,8 @@ var paper_to_books_ratio : float = 1
 
 var books_to_funds_ratio : float = 5
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	current_funds = 500
@@ -35,28 +37,28 @@ func _process(delta):
 #		)
 
 func _on_Buy_Paper_button_down(): 
-	current_funds -= $Options_Paper/Qty_Paper.value * funds_to_paper_ratio
-	current_paper += $Options_Paper/Qty_Paper.value
-	$Options_Paper/Qty_Paper.value = 0
+	current_funds -= $OptionsPaper/QtyPaper.value * funds_to_paper_ratio
+	current_paper += $OptionsPaper/QtyPaper.value
+	$OptionsPaper/QtyPaper.value = 0
 
 func _on_Buy_Ink_button_down():
-	current_funds -= $Options_Ink/Qty_Ink.value * funds_to_ink_ratio
-	current_ink += $Options_Ink/Qty_Ink.value
-	$Options_Ink/Qty_Ink.value = 0
+	current_funds -= $OptionsInk/QtyInk.value * funds_to_ink_ratio
+	current_ink += $OptionsInk/QtyInk.value
+	$OptionsInk/QtyInk.value = 0
 
 
 func _on_Make_Books_button_down():
-	current_ink -= $Options_Books/Qty_Books.value * ink_to_books_ratio
-	current_paper -= $Options_Books/Qty_Books.value * paper_to_books_ratio
-	current_books += $Options_Books/Qty_Books.value
-	$Options_Books/Qty_Books.value = 0
+	current_ink -= $OptionsBooks/QtyBooks.value * ink_to_books_ratio
+	current_paper -= $OptionsBooks/QtyBooks.value * paper_to_books_ratio
+	current_books += $OptionsBooks/QtyBooks.value
+	$OptionsBooks/QtyBooks.value = 0
 
 func _on_Sell_Books_button_down():
-	current_books -= $Options_Books/Qty_Books.value
-	current_funds += $Options_Books/Qty_Books.value * books_to_funds_ratio
+	current_books -= $OptionsBooks/QtyBooks.value
+	current_funds += $OptionsBooks/QtyBooks.value * books_to_funds_ratio
 
 func _on_Timer_timeout():
-	$Current_Funds.text = "Funds: %0.2f" % [current_funds]
-	$Current_Ink.text = "Ink: %0.2f" % [current_ink]
-	$Current_Paper.text = "Paper: %0.2f" % [current_paper]
-	$Current_Books.text = "Books: %0.2f" % [current_books]
+	$CurrentFunds.text = "Funds: %0.2f" % [current_funds]
+	$CurrentInk.text = "Ink: %0.2f" % [current_ink]
+	$CurrentPaper.text = "Paper: %0.2f" % [current_paper]
+	$CurrentBooks.text = "Books: %0.2f" % [current_books]
